@@ -1,60 +1,57 @@
-## Bitcoin 6-Month Hourly Analysis
 
-This project demonstrates a **time-series analysis pipeline** for Bitcoin, using 6 months of hourly historical data from CoinGecko. The pipeline includes:
+# Crypto Alert Pipeline Project
 
-- Data ingestion & preprocessing
-- Moving Averages (MA48, MA720)
-- Volatility calculation
-- Crossover alert detection
-- Plots and summary statistics
+This project demonstrates a complete pipeline for **crypto price alerting** with the following steps:
 
----
-
-### 📈 Plots
-
-**Price with Moving Averages & Alerts**
-
-![price_ma_alerts](visuals/price_ma_crossovers.png)
-
-> Green dots = Bullish alerts  
-> Red dots = Bearish alerts  
+1. **Data ingestion** from the CoinGecko API
+2. **Preprocessing and feature calculation** (price diff, percent change, moving averages, volatility)
+3. **Crossover alert logic** (bullish / bearish based on price vs moving averages and volatility)
+4. **Performance evaluation** (next-hour return, win rate, cumulative return)
+5. **Analysis by market conditions** (trend & volatility)
 
 ---
 
-### 📊 Alert Summary Table
+## Alerts Summary
 
-| Alert Type | Count | Avg Volatility | Avg Price Change % (next hour) |
-|------------|-------|----------------|--------------------------------|
-| Bullish    | 52    | 0.0021         | 0.0045                         |
-| Bearish    | 48    | 0.0020         | -0.0038                        |
-
-> Table generated using rolling MA48 (short-term) and MA720 (long-term) with low-volatility filter.
+- Total alerts generated: **40**
+- Mean next-hour return: **0.0003%**
+- Win rate: **2.50%**
 
 ---
 
-### 📝 Commentary
+## Performance by Trend & Volatility
 
-- **Bullish Alert**:  
-  Price crossed above the short-term MA48 while above the long-term MA720 and volatility was low.  
-  → Indicates short-term upward momentum within a longer-term uptrend.
+| Trend | Volatility | Count | Mean Next-Hour Return (%) | Win Rate (%) |
+|-------|------------|-------|--------------------------|--------------|
+| Downtrend | High Vol | 7 | 0.0000 | 0.00 |
+| Downtrend | Low Vol | 7 | 0.0000 | 0.00 |
+| Uptrend | High Vol | 13 | 0.0000 | 0.00 |
+| Uptrend | Low Vol | 13 | 0.0011 | 7.69 |
 
-- **Bearish Alert**:  
-  Price crossed below MA48 while below MA720 and volatility was low.  
-  → Indicates short-term downward momentum within a longer-term downtrend.
 
----
-
-### ✅ Sanity Checks
-
-- Timestamps are strictly increasing  
-- No missing price values  
-- Price min/max in expected ranges  
-- Volatility reasonable and consistent
+> Note: Alert counts per group are relatively small. Metrics are illustrative and demonstrate the pipeline’s ability to segment performance by trend and volatility. For real evaluation, larger datasets or adjusted thresholds may provide more robust statistics.
 
 ---
 
-### 💡 Key Takeaways
+## Plots
 
-- Combining **fast + slow MA** with **volatility filter** reduces noise  
-- Alerts are not just technical signals — they are **interpreted within the trend context**  
-- Pipeline is **ready for expansion**: more coins, more indicators, dashboard integration
+### Price + Moving Averages + Alerts
+
+![Price & Alerts](visuals/price_alerts.png)
+
+### Mean Next-Hour Return by Trend & Volatility
+
+![Return by Trend & Volatility](visuals/return_by_trend_vol.png)
+
+---
+
+## Key Takeaways
+
+- Alerts are generated **systematically** based on moving average crossovers and volatility conditions.
+- The pipeline is fully automated from data ingestion → preprocessing → alert calculation → evaluation.
+- Analysis by market conditions demonstrates **data-driven insights**, showing the best-performing conditions (e.g., uptrend + low volatility).
+- This project is **portfolio-ready**: it shows both **data engineering skills** and **quantitative trading logic**.
+
+---
+
+*Generated automatically using Python and the processed CSV data.*
