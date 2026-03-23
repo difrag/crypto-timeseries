@@ -1,5 +1,6 @@
 
-# Crypto Alert Pipeline Project ![btc](visuals/bitcoin-img.png)
+# Crypto Alert Pipeline Project  <img src="visuals/bitcoin-img.png" width="48">
+
 
 This project demonstrates a complete pipeline for **crypto price alerting** with the following steps:
 
