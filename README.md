@@ -37,11 +37,11 @@ This project demonstrates a complete pipeline for **crypto price alerting** with
 
 ### Price + Moving Averages + Alerts
 
-![Price & Alerts](plots/price_alerts.png)
+![Price & Alerts](visuals/price_alerts.png)
 
 ### Mean Next-Hour Return by Trend & Volatility
 
-![Return by Trend & Volatility](plots/return_by_trend_vol.png)
+![Return by Trend & Volatility](visuals/return_by_trend_vol.png)
 
 ---
 
