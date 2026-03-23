@@ -3,7 +3,7 @@
 
 This project demonstrates a complete pipeline for **crypto price alerting** with the following steps:
 
-1. **Data ingestion** from the CoinGecko API
+1. **Data ingestion** from the CoinGecko API (6 month long data taken hourly)
 2. **Preprocessing and feature calculation** (price diff, percent change, moving averages, volatility)
 3. **Crossover alert logic** (bullish / bearish based on price vs moving averages and volatility)
 4. **Performance evaluation** (next-hour return, win rate, cumulative return)
