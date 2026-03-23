@@ -50,8 +50,6 @@ This project demonstrates a complete pipeline for **crypto price alerting** with
 - Alerts are generated **systematically** based on moving average crossovers and volatility conditions.
 - The pipeline is fully automated from data ingestion → preprocessing → alert calculation → evaluation.
 - Analysis by market conditions demonstrates **data-driven insights**, showing the best-performing conditions (e.g., uptrend + low volatility).
-- This project is **portfolio-ready**: it shows both **data engineering skills** and **quantitative trading logic**.
 
 ---
 
-*Generated automatically using Python and the processed CSV data.*
